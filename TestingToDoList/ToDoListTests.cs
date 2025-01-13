@@ -6,6 +6,7 @@ namespace TestingToDoList
         private TodoList todoList = new TodoList();
 
         [Fact]
+        // Testar att en giltig uppgift läggs till i listan
         public void AddTask_AddValidTask()
         {
             todoList.AddTask("Task");
@@ -13,6 +14,7 @@ namespace TestingToDoList
         }
 
         [Fact]
+        // Testar att tomma värden inte läggs till i listan
         public void AddTask_DoesNotAddEmptyOrNullTasks()
         {
             todoList.AddTask("");
@@ -21,6 +23,7 @@ namespace TestingToDoList
         }
 
         [Fact]
+        // Testar att en uppgift tas bort från listan vid giltigt index
         public void RemoveTask_RemovesTaskAtValidIndex()
         {
             todoList.AddTask("Task to remove");
@@ -29,6 +32,7 @@ namespace TestingToDoList
         }
 
         [Fact]
+        // Testar att programmet ignorerar ett ogiltigt index
         public void RemoveTask_IgnoresInvalidIndex()
         {
             todoList.AddTask("Valid Task");
@@ -37,6 +41,7 @@ namespace TestingToDoList
         }
 
         [Fact]
+        // Testar att alla uppgifter returneras ifrån listan
         public void GetAllTasks_ReturnsAllTasks()
         {
             todoList.AddTask("Task 1");
