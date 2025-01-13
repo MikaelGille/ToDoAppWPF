@@ -19,12 +19,19 @@ namespace TodoAppWPF
     {
         private TodoList todoList;
 
+        /// <summary>
+        /// Initialiserar huvudfönster och TodoList instans
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             todoList = new TodoList();
         }
 
+        /// <summary>
+        /// Hanterar klickhändelse för "Lägg till uppgift"
+        /// Lägger till ny uppgift om texten inte är tom
+        /// </summary>
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             string task = TaskTextBox.Text;
@@ -41,6 +48,9 @@ namespace TodoAppWPF
             }
         }
 
+        /// <summary>
+        /// Hämtar uppgifter ifrån TodoList och uppdaterar ListBox
+        /// </summary>
         private void UpdateTaskList()
         {
             TasksListBox.Items.Clear();
@@ -50,6 +60,12 @@ namespace TodoAppWPF
             }
         }
 
+        /// <summary>
+        /// Hanterar klickhändelse för "Ta bort uppgift"
+        /// Tar bort den markerade uppgiften ifrån listan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             int selectedIndex = TasksListBox.SelectedIndex;
